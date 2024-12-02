@@ -8,7 +8,7 @@ st.write("För oss som glömt notera mätarställningen 2")
 
 
 # Val för visning i km eller mil
-enhet = st.radio("Välj visningsenhet:", ["Kilometer (km)", "Mil"])
+enhet = st.radio("Välj visningsenhet:", ["Kilometer (km)", "Mil"], index=1)
 
 # Konverteringsfaktor för km till mil
 km_to_mil = 0.1
@@ -37,14 +37,27 @@ st.write("### Resor")
 resor = []
 for resa in range(int(antal_resor)):
     st.write(f"#### Resa {resa + 1}")
-    datum = st.date_input(
-        f"Datum för resa {resa + 1}:", key=f"datum_{resa}", format="YYYY-MM-DD", value=None
-    )
-    destination = st.text_input(f"Destination för resa {resa + 1}:", key=f"destination_{resa}")
-    avstånd = st.number_input(
-        f"Avstånd ({enhet_text}):", min_value=0.0, step=1.0, key=f"avstand_{resa}"
-    )
+    
+    # Skapa kolumner för att placera fälten bredvid varandra
+    col1, col2, col3 = st.columns([3, 3, 4])
+    
+    # Lägg in inputfält i respektive kolumn
+    with col1:
+        datum = st.date_input(
+            f"Datum:", key=f"datum_{resa}", format="YYYY-MM-DD", value=None
+        )
+    with col3:
+        destination = st.text_input(
+            f"Destination:", key=f"destination_{resa}"
+        )
+    with col2:
+        avstånd = st.number_input(
+            f"Avstånd ({enhet_text}):", min_value=1, step=1, key=f"avstand_{resa}", value=None
+        )
+    
+    # Lägg till resan i listan
     resor.append({"Datum": datum, "Destination": destination, "Avstånd": avstånd})
+
 
 # Gör beräkningar när användaren klickar på "Beräkna"
 if st.button("Beräkna"):
