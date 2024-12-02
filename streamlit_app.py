@@ -3,12 +3,9 @@ import pandas as pd
 
 # Titel
 st.title("MätarHjälpen")
-<<<<<<< HEAD
+
 st.write("För oss som glömt notera mätarställningen 2")
 
-=======
-st.write("För oss som glömt notera mätarställningen")
->>>>>>> b5fc29bf62018975ffc4f63bffcd9b1bc3c102ac
 
 # Val för visning i km eller mil
 enhet = st.radio("Välj visningsenhet:", ["Kilometer (km)", "Mil"])
