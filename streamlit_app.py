@@ -17,20 +17,23 @@ km_to_mil = 0.1
 enhet_text = "km" if enhet == "Kilometer (km)" else "mil"
 
 # Input för senaste rapporterade mätarställning
-senaste_matarstallning = st.number_input(
-    f"Senaste rapporterad mätarställning ({enhet_text}):", min_value=1, step=10, value=None
-)
-datum_senaste_matarstallning = st.date_input(
-    "Datum för senaste rapporterad mätarställning:", format="YYYY-MM-DD", value=None
-)
+col1, col2, col3 = st.columns([3, 3, 4])
+with col1:
+    senaste_matarstallning = st.number_input(
+        f"Rapporterad mätarställning ({enhet_text}):", min_value=1, step=10, value=None
+    )
+with col2:
+    datum_senaste_matarstallning = st.date_input(
+        "Datum för senaste rapporterad:", format="YYYY-MM-DD", value=None
+    )
+with col1:
+    # Mätarställning efter sista resan
+    matarstallning_efter = st.number_input(
+        f"Nuvarande mätarställning ({enhet_text}):", min_value=1, step=10, value=None
+    )
 
-# Mätarställning efter sista resan
-matarstallning_efter = st.number_input(
-    f"Mätarställning efter sista resan ({enhet_text}):", min_value=1, step=10, value=None
-)
-
-# Antal resor
-antal_resor = st.number_input("Antal resor:", min_value=1, step=1, value=1)
+    # Antal resor
+    antal_resor = st.number_input("Antal resor:", min_value=1, step=1, value=1)
 
 # Dynamiska fält för resor baserat på antal_resor
 st.write("### Resor")
