@@ -133,7 +133,10 @@ if st.button("Beräkna"):
 
                 # Ta bort km-kolumner
                 resultat_df.drop(columns=["Avstånd", "Mätarställning Före", "Mätarställning Efter"], inplace=True)
-
+                
+            # Ändra indexering så att den börjar på 1
+            resultat_df.index = range(1, len(resultat_df) + 1)
+            
             # Anpassa format för att ta bort tusenavgränsare
             formatted_df = resultat_df.style.format(
                 formatter={col: "{:.0f}".format for col in resultat_df.select_dtypes(include="number").columns}
