@@ -2,9 +2,45 @@ import streamlit as st
 import pandas as pd
 
 
+
+st.markdown(
+    """
+    <style>
+    .header {
+        background-color: #ACC6E2; /* Mörkblå bakgrund */
+        color: white; /* Vit text */
+        padding: 15px; /* Justera padding för hela headern */
+        text-align: center;
+        border-radius: 8px;
+       # display: inline-block; /* Förhindra onödigt vertikalt utrymme */
+    }
+    .header h1 {
+        margin: 0; /* Ta bort marginaler */
+        font-size: 3em; /* Stor huvudrubrik */
+        line-height: 1; /* Täta rader */
+    }
+    .header h2 {
+        margin: 0; /* Ingen marginal alls */
+        padding-top: 5px; /* Liten separation */
+        font-size: 1.2em; /* Mindre underrubrik */
+        font-weight: normal; /* Tunnare stil för underrubrik */
+        color: #e0e0e0; /* Ljusare vit färg för kontrast */
+        line-height: 1; /* Täta rader */
+    }
+    </style>
+    <div class="header">
+        <h1>Mätarhjälpen</h1>
+        <h2>För oss som glömt notera mätarställningen</h2>
+    </div>
+    """,
+    unsafe_allow_html=True
+)
+
+
+
 # Titel
-st.title("MätarHjälpen")
-st.write("För oss som glömt notera mätarställningen")
+ # st.title("MätarHjälpen")
+ # st.write("För oss som glömt notera mätarställningen")
 
 
 # Val för visning i km eller mil
