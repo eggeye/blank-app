@@ -7,7 +7,7 @@ st.markdown(
     """
     <style>
     .header {
-        background-color: #ACC6E2; /* Mörkblå bakgrund */
+        background-color: #5B97D7; /* Mörkblå bakgrund */
         color: white; /* Vit text */
         padding: 15px; /* Justera padding för hela headern */
         text-align: center;
@@ -42,6 +42,7 @@ st.markdown(
  # st.title("MätarHjälpen")
  # st.write("För oss som glömt notera mätarställningen")
 
+st.write(" ")
 
 # Val för visning i km eller mil
 enhet = st.radio("Välj visningsenhet:", ["Kilometer (km)", "Mil"], index=1)
