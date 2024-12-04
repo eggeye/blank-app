@@ -1,10 +1,10 @@
 import streamlit as st
 import pandas as pd
 
+
 # Titel
 st.title("MätarHjälpen")
-
-st.write("För oss som glömt notera mätarställningen 2")
+st.write("För oss som glömt notera mätarställningen")
 
 
 # Val för visning i km eller mil
